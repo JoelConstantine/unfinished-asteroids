@@ -1,7 +1,7 @@
 app.game = {
 
   start: function() {
-    
+
     this.entities = new ENGINE.Entities;
     this.collisions = new ENGINE.Collisions(this.entities);
     this.collisions.callback = this.collisionHandler.bind(this);
@@ -22,9 +22,9 @@ app.game = {
   },
 
   spawnAsteroid: function() {
-    
+
     var angle = Math.random() * 6;
-    
+
     var x = Math.cos(angle) * app.width;
     var y = Math.sin(angle) * app.width;
 
@@ -105,7 +105,7 @@ app.game = {
         this.players[0].left = false;
         break;
       case "right":
-        this.players[0].left = false  ;
+        this.players[0].right = false;
         break;
       case "up":
         this.players[0].up = false;
