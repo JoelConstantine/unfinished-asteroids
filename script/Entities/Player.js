@@ -87,7 +87,7 @@ ENGINE.Player.prototype = {
   },
 
   shoot: function() {
-
+    app.playSound("shoot");
     this.collection.add(ENGINE.Bullet, {
       x: this.x,
       y: this.y,
@@ -127,6 +127,7 @@ ENGINE.Player.prototype = {
     if (this.shooting) {
       if ((this.cooldown -= delta) <= 0) {
         this.shoot();
+        
         this.cooldown = this.maxCooldown;
       }
     }
