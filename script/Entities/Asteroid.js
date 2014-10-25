@@ -36,7 +36,12 @@ ENGINE.Asteroid.prototype = {
       if (this.splits) this.split();
 
       app.playSound("asteroid-crush");
-      app.game.increaseScore(data.team, 1);
+
+      if (data instanceof ENGINE.Bullet) {
+        app.game.increaseScore(data.team, 1);
+
+        app.game.addCoin(this.x, this.y);
+      }
 
       this.collection.remove(this);
     }

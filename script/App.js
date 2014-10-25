@@ -13,6 +13,7 @@ var app = playground({
     this.loadSounds("shoot");
     this.loadSounds("asteroid-hit");
     this.loadSounds("asteroid-crush");
+    this.loadSounds("coin_pickup");
   },
 
   ready: function() {

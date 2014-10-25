@@ -78,6 +78,10 @@ ENGINE.Player.prototype = {
     this.forceDamping = value;
   },
 
+  addScore: function(score) {
+    this.score += score;
+  },
+
   hit: function(data) {
 
     this.hp = Math.max(0, this.hp - data.damage);

@@ -25,7 +25,7 @@ ENGINE.Bullet.prototype = {
   ],
 
   collision: function(entity) {
-
+    
     if (entity.hit) {
 
       if (entity.team !== this.team) {
