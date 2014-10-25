@@ -79,6 +79,10 @@ app.game = {
 
   },
 
+  increaseScore: function(team, score) {
+    this.players[team].score += score;
+  },
+
   keydown: function(e) {
     switch (e.key) {
       case "space":
