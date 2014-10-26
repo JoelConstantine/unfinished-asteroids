@@ -5,7 +5,8 @@ ENGINE.Coin = function(args) {
     curFrame: 0
   }, args);
 
-  this.lastTick = Date.now();
+  this.delta = 0;
+  this.frame = 0;
 };
 
 ENGINE.Coin.prototype = {
@@ -31,19 +32,13 @@ ENGINE.Coin.prototype = {
   },
 
   render: function(delta) {
-  	var curTick = ( Date.now() - this.lastTick );
-
+  	var sprite,
+  		duration = .75;
   	
-  	if (curTick > 130) {
-  		
-  		this.curFrame++;
-  		this.lastTick = Date.now();
-  	}
 
-  	if ( this.curFrame > 6 ) { 
-  		this.curFrame = 0; 
-  	}
-  	var sprite = [this.curFrame * 10, 0, 10, 10];
+  	this.delta += delta;
+ 	this.frame = (this.delta % duration / duration) * 7 | 0;
+	sprite = [this.frame * 10, 0, 10, 10];
     
     app.layer.drawRegion(app.images.coins, sprite, this.x -5 , this.y -5 );
   }
