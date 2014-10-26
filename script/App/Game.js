@@ -37,12 +37,10 @@ app.game = {
   },
 
   addCoin: function(x, y) {
-    console.log("Adding coin at ", x, " ", y);
-
-     this.entities.add(ENGINE.Coin, {
-        x: x,
-        y: y
-      });
+    this.entities.add(ENGINE.Coin, {
+      x: x,
+      y: y
+    });
   },
 
   addPlayer: function(x, y, team) {
